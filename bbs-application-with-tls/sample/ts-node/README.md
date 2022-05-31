@@ -13,7 +13,7 @@ yarn install --frozen-lockfile
 yarn publisher
 ```
 
-to run the clients/subscribers:
+Run the clients/subscribers in ``` bbs-application-with-tls/sample/ts-node/certs/client ```:
 
 ```
 cd certs/client/
