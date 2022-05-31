@@ -19,15 +19,11 @@ to run the clients/subscribers:
 cd certs/client/
 
 chmod +x subscriberA.sh 
-
-chmod +x subscriberB.sh 
-
 ./subscriberA
-
-
 ```
 in other terminal:
 
 ```
+chmod +x subscriberB.sh 
 ./subscriberB
 ```
