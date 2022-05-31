@@ -61,8 +61,6 @@ See the [sample](./sample) directory for a runnable demo.
 
 The following is an example of a signed JSON-LD document featuring a `BbsBlsSignature2020` type signature.
 
-![alt text](https://github.com/rodrigodg1/bbs-application/blob/master/diagram2.jpg?raw=true)
-
 
 Run this example using ```yarn demo ``` in ```sample/ts-node``` directory :
 
