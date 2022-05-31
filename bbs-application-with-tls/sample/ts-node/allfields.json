@@ -27,10 +27,10 @@
   "issuer": "did:example:489398593",
   "proof": {
     "type": "BbsBlsSignatureProof2020",
-    "created": "2022-05-31T13:44:53Z",
-    "nonce": "+Oa+D8lT/8sKXgrGNGvpaEX86voSFGTB+Vr8BR4O+b2RN8nfSYhba4+hJOt5Tw2zp6s=",
+    "created": "2022-05-31T14:34:51Z",
+    "nonce": "tCu24m6JRfl7MRVoAmsNJAmK5rm9XcOfQKqd7R92WAD+Oejcm7IydjkWVCG3F6RtN88=",
     "proofPurpose": "assertionMethod",
-    "proofValue": "ABID//+YlVt7nkgWB8h7pFNa4T//kAqVjQrm787YMAgGlpsTQpiIYVB0nyEHKDzqXfNAJQSRzQ48QaIFtkYYo7niGIWFHrVZJ2+rSue+coQZ44V542o6MvAU12wiuXcO20D6tHijzIZd2NaTPKgSl1ckXSl+g0h6ISRwUO0cAKpi6fnMoPxEByuB7iCpr2H1AYCFMl0AAAB0gyMYu5Pi7uRr7pggVx0ku24zfv4iU3eEyhOPYkXzj5hJkni13HYw7eF1FsbVS3ArAAAAAkoQ54RjCvH2bHep4dGbfsgpWYjiN/929pkkH2ipRkpPVb738hO/X2APMi5fR68vkm+SvksOFV/y2rLWfPX475inKxm4nQnXsIcwPKUgbHBm+14cvXhWkadNjFMyijUVgOhqKM558px4CI9IWXg9r8EAAAACT5BEzEmgUNKjShcPskZxG4PWUz4uT+wCpTmVVSw1qRpUOY54PEGIu8heR+GbAXu6VQ0vjn41ZvjAowvv7F2a6w==",
+    "proofValue": "ABID//+SwEfnwno9YbL1klfv2oXkPRvE1lzNIJe4LTH+R/Pu+tHL1Cl9NemYfCUIlMdluDCM1ltN7JWMO5AS8Rus+/3fswTM0sp6f101QJdvQiY2LPjJcpml0qybCz0sK5NYKvWoRPjjwtqEOvW/HeHBM4wgGIx7+4nXZfXWpR5YFoCyZwzy8hFswJEZl0jgE1wx8wkAAAB0hSS19cEp4I7sKVihln63nvHBjL03E/bIsCxbhdvNQIXPZb1oa/YLOmBymjiXXkaHAAAAAiMJUgZHmxNap3AUtZXk3wzBwIFeESOM3/grrHjJt+k6AiKWgbXKIrFFcF9KK/fTocBB4LPI49j7Xe/oxD0p1vSwYLlVwGAiz011rz+cQeEK07FEJevIp95uBUU4k5QqrkqXRvXSSEOu9LgKvciqbDgAAAACau8BB15GY5zc2glAgrd+Z6tnmTI6OR6IVMzE8eM8o2ACrlsCvebiwCOeLc3zcWce7+1O/GSAuDZOsUfUB3o00A==",
     "verificationMethod": "did:example:489398593#test"
   }
 }

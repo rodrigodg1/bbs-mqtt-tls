@@ -35,7 +35,7 @@ Start the broker using the command:
 mosquitto -p 2020
 ```
 
-Run the client/subscribers:
+Run the subscribers in ``` sample/ts-node  ``` directory:
 
 ```
 node SubscriberA.js
@@ -45,7 +45,7 @@ in other terminal:
 node SubscriberB.js
 ```
 
-Run the publish client:
+In ```sample/ts-node``` directory, run the publish client:
 
 ```
 yarn publisher

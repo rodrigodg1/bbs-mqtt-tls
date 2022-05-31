@@ -25,10 +25,10 @@
   "issuer": "did:example:489398593",
   "proof": {
     "type": "BbsBlsSignatureProof2020",
-    "created": "2022-05-31T13:44:53Z",
-    "nonce": "ER8PG4wL1s0BJleJjoZa+ruQxRrckWMdMABG+SwqI8mgp5EfUHPNIuWi4QA5e4Ou+6U=",
+    "created": "2022-05-31T14:34:51Z",
+    "nonce": "Q3ANJsnBexSoHYe5fu/qx0d88/EHBAy8CVwP2bMLQlhUQnXefZZdqgapg0vYo96mBlE=",
     "proofPurpose": "assertionMethod",
-    "proofValue": "ABID/8+qet7WyEXx9UG1V5gy5XvB+MftQrhvVbYE/n1mwa2DIgYyKS1FHS4dWO7olp4Ke564ATGeCC8oV+kFIZcnUktlMQX+U2RbMgpJSbtux4XitaGbezQlOAU47ZYy0oR0xD2J9ql7vAAlyfyfUHm6zpLjjIPX3vrecoYgIBuuEvl+o0/3dvij/L263Lg35tu1rrAAAAB0oV/gKMzF8qAsjqInXjEx91TuDfVPJmuAAM9D4qg45jrgk4Xq05EcPQr/I7RC0ACxAAAAAlCV++Z3RYGwTcxhKo/SoBzz7gu4kvSn0MnCnyxE+pvdZ+5tLuM9oRS58wGRt3cYuykCgGuM8BVOKh9apAPVm3iR+anHn3AnxsroY4QUZUvpENDTRFAI6tOml/vgo8uduqXAj5SBVIqPHzA1i7OCK3MAAAAEbbULgREjCRj//525L3cnmcbwCnF71/7/zFl0Yv9rlZIcbUWp8406LnGNK6Voedv4oY1yvApDJPuVylFFJnTut2lZMf1W4e+0+3uLxLz5B/yRn0IBGuSdGzeu1hhH9WMGZNljZufBPA+T/7JhtgNmDmLDYrCL9dJQqOxpb5/5qS0=",
+    "proofValue": "ABID/8+VWHvt3HQeK8++gwg3PvUAb6jFlKEaGcSFrK+v69CJXLCaYsR9PwUhHlvLhVn2Hn+QVupEoL6kfb1FrV5Dc66phZ/WW31X4HTHfm8gRz5QfbslutWUBdbc60yPITLZT62SrH+lYVeL/svHucaJZI/vrqzfFIFkmbTpSPH8GRQqrdFRL54qdSUDhFpgAV02rmoAAAB0sXeFvEbChSnKu2L/eGG3oKd28/Kf63kWqYXNSfAFflI988UTivGqQ7IwN9RtQgvcAAAAAm48vMu0E0C33urzZbVH7e63CK1+az+rtrkrpmDBsFpXUMkMDpj6Im+iq53hgCLjI03HT8rrPPuFXMjVF8TBqUmQL1QBsoWCOWAtdpzcJO2ozw+dN2NiKaFjk7IzRG3oxwzXnW4YoPLOwFgGlTLX9V8AAAAEJwNxTNEvXTqiyIGXkhf8MDyLU0K7o3Bm2jV9pyCnrYE4bKAFLMHfGv/nEr239LwM2bcfXJMJSxeiKgPWUlIL0B7va0iS0CwyYsto95qvpS+6qK9ABBF7QFN4CypROfvvcXdFrN8kxtRemQcQs9UpoXInTGDgRzhsyRRU1EZerXI=",
     "verificationMethod": "did:example:489398593#test"
   }
 }
