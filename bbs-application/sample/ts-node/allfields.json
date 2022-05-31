@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1",
+    "https://w3id.org/citizenship/v1",
+    "https://w3id.org/security/bbs/v1"
+  ],
+  "id": "https://issuer.oidp.uscis.gov/credentials/83627465",
+  "type": [
+    "AnyUseCaseCard",
+    "VerifiableCredential"
+  ],
+  "description": "Example of Any Use Case Card.",
+  "identifier": "83627465",
+  "name": "Any Use Case Card",
+  "credentialSubject": {
+    "id": "did:example:b34ca6cd37bbf23",
+    "type": [
+      "Person",
+      "AnyUseCase"
+    ],
+    "location": "office",
+    "occupancy": "true",
+    "temperature": "87"
+  },
+  "expirationDate": "2029-12-03T12:19:52Z",
+  "issuanceDate": "2019-12-03T12:19:52Z",
+  "issuer": "did:example:489398593",
+  "proof": {
+    "type": "BbsBlsSignatureProof2020",
+    "created": "2022-05-31T13:24:12Z",
+    "nonce": "Zws59mTNrTsd6IEYbz3AUA656cJIZGGIF6AAokFcVbihNZ2SAzWo0LIliLF81uqiFhE=",
+    "proofPurpose": "assertionMethod",
+    "proofValue": "ABID//+Y30j7BbuCFwXLBE0TodUF5OADXrRYe2FqbTvlHji/T6Fzho9GaZJ3AIO1Hjj1waqiH57fVHyObuW/EYRbgh5I6DQGTwbQB8jE38bnHXq5F0rnQNZmKLj2TqT4/vs3fx+g7p3s/JooFWtWIfOJZpj0DCo8tbYw1RG/1HyAF9cTP5Z3PLZwxzF5U+Wvz6VInK0AAAB0oFfIGT5k/6x2FfNTMTAo4dqAd/Gi/ZxexsDJo86t93qnvHSFDuLzEKH9rT19VZRQAAAAAmkKb7Rs3rvfUhyt9JeZiRkS36dpyP5fMz3V1AwwIR5bZoplLKWHYTa8FA0garo+fxRKb2LcBEwNWPJ5tZFY4G20oYCdhH4czcVBQ5RU94kRJ/697PjN145OTcv1x3IirprLmonQ0wBsjkijWCTR0rsAAAACKCYWVnjjMJmP7OmPIGRu4XtDt8uMUJ4iwF0kCS6saAZhjWAHalcDIySsLohfGHN775VbelC8tOuMBJeStnuLkg==",
+    "verificationMethod": "did:example:489398593#test"
+  }
+}
