@@ -7,7 +7,7 @@ BBS+ signatures enable a user to select information to be shared. In this way, m
 
 [BBS+ implementation with MQTT integration with TLS](https://github.com/rodrigodg1/bbs-mqtt-tls/tree/main/bbs-application-with-tls)
 
-[MQTT with TLS](https://github.com/rodrigodg1/bbs-mqtt-tls/tree/main/mqtt-tls)
+[MQTT with TLS (without BBS+)](https://github.com/rodrigodg1/bbs-mqtt-tls/tree/main/mqtt-tls)
 
 
 
