@@ -2,7 +2,29 @@
 
 MQTT with TLS implementation without BBS+
 
-### Instructions
+
+### Requirements
+
+* Mosquitto 
+
+* Nodejs
+
+* MQTT
+
+
+## Instructions
+
+
+Install MQTT:
+```
+npm install mqtt --save
+```
+
+Install mosquitto:
+```
+sudo apt-get install mosquitto
+sudo apt-get install mosquitto-clients
+```
 
 To start mosquitto server, run:
 
@@ -33,4 +55,10 @@ in one terminal, run the first subscriber:
 in other terminal, run the second subscriber:
 ```
 ./subscriberB.sh
+```
+
+to run the publisher:
+
+```
+npm run publisher
 ```

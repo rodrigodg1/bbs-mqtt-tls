@@ -4,9 +4,6 @@
 Mosquitto Server Port : 8883
 */
 
-
-
-
 const mqtt = require('mqtt')
 const fs = require('fs');
 const execSync = require('child_process').execSync;

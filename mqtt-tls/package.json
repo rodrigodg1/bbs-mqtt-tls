@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/rodrigodg1/bbs-mqtt-tls/issues"
   },
-  "homepage": "https://github.com/rodrigodg1/bbs-mqtt-tls#readme"
+  "homepage": "https://github.com/rodrigodg1/bbs-mqtt-tls#readme",
+  "dependencies": {
+    "mqtt": "^4.3.7"
+  }
 }
