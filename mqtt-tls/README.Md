@@ -1,6 +1,6 @@
 # MQTT-TLS
 
-MQTT with TLS implementation
+MQTT with TLS implementation without BBS+
 
 ### Instructions
 
@@ -25,7 +25,7 @@ chmod +x subscriberA.sh
 chmod +x subscriberB.sh
 
 ```
-in one terminal, run the firt subscriber:
+in one terminal, run the first subscriber:
 ```
 ./subscriberA.sh
 ```
