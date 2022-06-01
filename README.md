@@ -16,11 +16,21 @@ BBS+ signatures enable a user to select information to be shared. In this way, m
 
 
 **Implementation Diagram**
+<br />
 
 ![Diagram BBS+ with MQTT](https://raw.githubusercontent.com/rodrigodg1/bbs-mqtt-tls/main/diagram.jpg)
 
+<br />
+
 **Packet analysis without TLS**
+<br />
+
 ![Packet analysis without TLS](https://raw.githubusercontent.com/rodrigodg1/bbs-mqtt-tls/main/non-encrypted.png)
 
+<br />
+
 **Packet analysis with TLS**
+<br />
+
+
 ![Packet analysis with TLS](https://raw.githubusercontent.com/rodrigodg1/bbs-mqtt-tls/main/encrypted.png)
