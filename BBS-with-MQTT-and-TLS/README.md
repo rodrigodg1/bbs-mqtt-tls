@@ -1,6 +1,6 @@
 [![MATTR](./docs/assets/mattr-logo-square.svg)](https://github.com/mattrglobal)
 
-# BBS-signatures with MQTT and TLS
+# BBS-signatures with MQTT without TLS
 
 This repository is the home to a performant multi-message digital signature algorithm implementation which supports
 deriving zero knowledge proofs that enable selective disclosure from the originally signed message set.
@@ -37,14 +37,16 @@ yarn add @mattrglobal/bbs-signatures
 
 ### Prerequisites
 
-The following is a list of dependencies you must install to build and contribute to this project
+The following is a list of dependencies:
 
 - [Yarn](https://yarnpkg.com/)
 - [Rust](https://www.rust-lang.org/)
-- [Mosquitto] (https://mosquitto.org/download/)
-- [MQTT] (https://www.npmjs.com/package/mqtt)
+- [Mosquitto](https://mosquitto.org/download/)
+- [MQTT](https://www.npmjs.com/package/mqtt)
 
 
+## Example
 
+- [Example 1](https://github.com/rodrigodg1/bbs-mqtt-tls/tree/main/BBS-with-MQTT-and-TLS/sample/ts-node)
 
 
