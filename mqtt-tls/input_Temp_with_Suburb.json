@@ -1,7 +1,6 @@
 {
 	"Data": {
-		"temperature": "82",
-    "Suburb":"2398"
-
+	  "Temperature": "82",
+	  "Suburb": "2398"
 	}
-}
+  }
