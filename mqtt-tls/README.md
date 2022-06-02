@@ -71,7 +71,7 @@ npm run publisher
 Access control list
 
 ```
-cat cat server/aclfile.acl
+cat server/aclfile.acl
 ```
 
 usernames and passwords are already established in the connections and publisher code:
