@@ -13,11 +13,13 @@ yarn add @mattrglobal/bbs-signatures
 ```
 
 Install MQTT:
+
 ```
 npm install mqtt --save
 ```
 
 Install mosquitto:
+
 ```
 sudo apt-get install mosquitto
 sudo apt-get install mosquitto-clients
@@ -28,40 +30,29 @@ To start mosquitto server,
 ```
 cd /server
 ```
+
 Run:
 
 ```
 mosquitto -c server-config.conf
 ```
 
-To run the subscribers: 
+To run the subscribers:
 
-
-```
-cd certs/client/
-
-```
-
-Permission:
-
-```
-chmod +x subscriberA.sh
-chmod +x subscriberB.sh
-
-```
 in one terminal, run the first subscriber:
+
 ```
-./subscriberA.sh
+node subscriberA.js
 ```
 
 in other terminal, run the second subscriber:
-```
-./subscriberB.sh
-```
-
-to run the publisher:
 
 ```
-yarn publisher-and-subscriber
+node subscriberB.js
 ```
 
+to run the publisher and server software:
+
+```
+yarn publisher-and-server
+```
