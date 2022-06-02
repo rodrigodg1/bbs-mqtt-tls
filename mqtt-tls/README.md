@@ -71,16 +71,16 @@ npm run publisher
 Access control list
 
 ```
-cat mqtt-tls/server/aclfile.acl
+cat cat server/aclfile.acl
 ```
 
 usernames and passwords are already established in the connections and publisher code:
 
 ```
-cat mqtt-tls/certs/client/subscriberA.sh
+cat certs/client/subscriberA.sh
 ```
 and
 
 ```
-cat mqtt-tls/certs/client/subscriberB.sh
+cat certs/client/subscriberB.sh
 ```
