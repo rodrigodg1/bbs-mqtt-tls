@@ -13,27 +13,28 @@ const execSync = require('child_process').execSync;
 function publish(){
 
 
-    fs.readFile('inputDocument.json', 'utf8', (err, data) => {
+    fs.readFile('input_Temp_with_Suburb.json', 'utf8', (err, data) => {
       if (err) {
           console.error(err);
           return;
       }
 
       //exec publish
-      const output = execSync('mosquitto_pub -p 8883 --cafile certs/ca/ca.crt --cert client.crt --key client.key -h localhost -f inputDocument.json -t temperature', { encoding: 'utf-8' });  // the default is 'buffer'
+      const output = execSync('mosquitto_pub -p 8883 -u publisher -P pub --cafile certs/ca/ca.crt --cert client.crt --key client.key -h localhost -f input_Temp_with_Suburb.json -t temp_with_suburb', { encoding: 'utf-8' });  // the default is 'buffer'
 
 
   });
 
-  fs.readFile('inputDocument.json', 'utf8', (err, data) => {
+  fs.readFile('input_Temp_with_GPS.json', 'utf8', (err, data) => {
     if (err) {
         console.error(err);
         return;
     }
     
     //exec publish
-    const output = execSync('mosquitto_pub -p 8883 --cafile certs/ca/ca.crt --cert client.crt --key client.key -h localhost -f inputDocument.json -t allfields', { encoding: 'utf-8' });  // the default is 'buffer'
+    //const output = execSync('mosquitto_pub -p 8883 -u publisher -P pub --cafile certs/ca/ca.crt --cert client.crt --key client.key -h localhost -f input_Temp_with_GPS.json -t temp_with_gps', { encoding: 'utf-8' });  // the default is 'buffer'
 
+    const output = execSync('mosquitto_pub -p 8883 -u publisher -P pub --cafile certs/ca/ca.crt --cert client.crt --key client.key -h localhost -f input_Temp_with_GPS.json -t temp_with_gps', { encoding: 'utf-8' });  // the default is 'buffer'
 
 
 

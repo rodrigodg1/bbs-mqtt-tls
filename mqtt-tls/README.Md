@@ -26,7 +26,12 @@ sudo apt-get install mosquitto
 sudo apt-get install mosquitto-clients
 ```
 
-To start mosquitto server, run:
+To start mosquitto server,
+
+```
+cd /server
+```
+Run:
 
 ```
 mosquitto -c server-config.conf
@@ -61,4 +66,21 @@ to run the publisher:
 
 ```
 npm run publisher
+```
+
+Access control list
+
+```
+cat mqtt-tls/server/aclfile.acl
+```
+
+usernames and passwords are already established in the connections and publisher code:
+
+```
+cat mqtt-tls/certs/client/subscriberA.sh
+```
+and
+
+```
+cat mqtt-tls/certs/client/subscriberB.sh
 ```
