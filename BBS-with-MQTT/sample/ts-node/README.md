@@ -1,16 +1,20 @@
 # bbs-signatures-sample
 
-To use this package within your project simply run
+The publisher sends a document (inputDocument) to the server with the following items:
 
-```
-npm install @mattrglobal/bbs-signatures
-```
+- "Temperature",
+- "GPS_Lat"
+- "GPS_Long"
+- "Suburb"
 
-Or with [Yarn](https://yarnpkg.com/)
+The server creates a two diferent versions in topics:
 
-```
-yarn add @mattrglobal/bbs-signatures
-```
+- Topic 1: temp_with_suburb
+- Topic 2: temp_with_gps
+
+Subscriber A onlye receiver Topic 1 with temperature and Suburb information.
+
+Subscriber B receive the Topic 2 with all informations (i.e., temperature, GPS_Lat, GPS_Long, and Suburb)
 
 Install MQTT:
 

@@ -18,13 +18,19 @@ Subscriber A onlye receiver Topic 1 with temperature and Suburb information.
 Subscriber B receive the Topic 2 with all informations (i.e., temperature, GPS_Lat, GPS_Long, and Suburb)
 
 
-To generate the derived proofs run the publisher and server code:
+
+run the mosquitto server:
 
 ```
-yarn install --frozen-lockfile
-yarn publisher-and-server
+cd server/
+```
+and
 
 ```
+mosquitto -c server-config.conf
+```
+
+
 
 to run the clients/subscribers:
 
@@ -45,4 +51,11 @@ chmod +x subscriberB.sh
 ./subscriberB
 ```
 
+To generate the derived proofs run the publisher and server code:
+
+```
+yarn install --frozen-lockfile
+yarn publisher-and-server
+
+```
 
