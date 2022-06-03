@@ -23,6 +23,8 @@ import {
 } from "@mattrglobal/bbs-signatures";
 import { exit } from "process";
 
+
+
 const main = async () => {
   //Generate a new key pair
   try {
@@ -49,16 +51,19 @@ const main = async () => {
 
     //console.log("Signing a message set of " + messages);
 
-    //Create the signature.]
-
+    //Publisher creates the signature. (this signature and the input document will be send to the server )
     const signature = await blsSign({
       keyPair,
       messages: messages,
     });
 
+
+
+
     //console.log(`Output signature base64 = ${Buffer.from(signature).toString("base64")}`);
 
-    //Verify the signature
+
+    //Server, or subscribers can verify the signature
     const isVerified = await blsVerify({
       publicKey: keyPair.publicKey,
       messages: messages,
@@ -66,13 +71,16 @@ const main = async () => {
     });
 
     //Derive a proof from the signature revealing the first message
-    const proof = await blsCreateProof({
+    const proof_temp_suburb = await blsCreateProof({
       signature,
       publicKey: keyPair.publicKey,
       messages,
       nonce: Uint8Array.from(Buffer.from("nonce", "utf8")),
       revealed: [0, 1], //temperature and suburb position
     });
+
+
+
 
     /*Verify the created proof
     The proof is created containing the messages selected to be shared. In this implementation, messages are not shown inside the proof.
@@ -81,7 +89,7 @@ const main = async () => {
     If the message is allowed, the check function returns true.
     */
     const isProofVerified_temp_suburb = await blsVerifyProof({
-      proof,
+      proof:proof_temp_suburb,
       publicKey: keyPair.publicKey,
       messages: messages.slice(0, 2), // temperature and suburb (note the message position here)
       nonce: Uint8Array.from(Buffer.from("nonce", "utf8")),
@@ -89,25 +97,28 @@ const main = async () => {
 
     var client = mqtt.connect("mqtt://127.0.0.1:2020");
 
+    // send to the subscriber A
     if (isProofVerified_temp_suburb.verified == true) {
       var temp_suburb = { Temperature: temperature, Suburb: suburb };
       var temp_with_suburb = JSON.stringify(temp_suburb);
 
-      //connect MQTT broker
 
       client.on("connect", function () {
         client.publish("temp_with_suburb", temp_with_suburb);
-        //client.end();
       });
     }
 
-    //Derive a proof from the signature revealing the first message
+
+
+    /*Derive a proof from the signature revealing all items in input document
+    Subscribers can verify if its a the same sends by publisher
+    */
     const proof_all_items = await blsCreateProof({
       signature,
       publicKey: keyPair.publicKey,
       messages,
       nonce: Uint8Array.from(Buffer.from("nonce", "utf8")),
-      revealed: [0, 1, 2, 3], //temperature and suburb position
+      revealed: [0, 1, 2, 3], //temperature, lat_gps, long_gps, suburb
     });
 
     //console.log(`Output proof_B base64 = ${Buffer.from(proof_all_items).toString("base64")}`);
@@ -115,9 +126,13 @@ const main = async () => {
     const isProofVerified_temp_with_gps = await blsVerifyProof({
       proof: proof_all_items,
       publicKey: keyPair.publicKey,
-      messages: messages.slice(0, 4), // temperature lat_gps, long_gps and suburb
+      messages: messages.slice(0, 4), // temperature, lat_gps, long_gps and suburb
       nonce: Uint8Array.from(Buffer.from("nonce", "utf8")),
     });
+
+
+
+    // send to the subscriber B
 
     if (isProofVerified_temp_with_gps.verified == true) {
       var temp_with_gps = {

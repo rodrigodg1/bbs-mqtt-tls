@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "private": false,
   "scripts": {
-    "publisher-and-server": "ts-node ./src/publish-and-server.ts"
+    "publisher-and-server": "ts-node ./src/publisher-and-server.ts"
   },
   "devDependencies": {
     "@types/node": "12.7.2",

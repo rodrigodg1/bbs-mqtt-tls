@@ -1,6 +1,6 @@
 const mqtt = require("mqtt");
 
-//broker server
+//broker server information
 var client = mqtt.connect("mqtt://127.0.0.1:2020");
 
 client.on("connect", function () {
