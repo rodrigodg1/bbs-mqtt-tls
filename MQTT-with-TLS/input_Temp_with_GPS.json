@@ -1,8 +1,8 @@
 {
-	"Data": {
-		"Temperature": "82",
-		"GPS-Lat": "30",
-		"GPS-Long": "123"
-
-	}
+  "Data": {
+    "Temperature": "82",
+    "GPS-Lat": "30",
+    "GPS-Long": "123",
+    "Suburb": "2398"
+  }
 }
