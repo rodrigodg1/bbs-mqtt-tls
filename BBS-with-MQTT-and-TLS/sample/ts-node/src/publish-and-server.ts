@@ -10,11 +10,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { readFileSync } from 'fs';
-const fs = require('fs');
-const mqtt = require('mqtt')
-const execSync = require('child_process').execSync;
-
+import { readFileSync } from "fs";
+const fs = require("fs");
+const mqtt = require("mqtt");
+const execSync = require("child_process").execSync;
 
 import {
   generateBls12381G2KeyPair,
@@ -23,7 +22,7 @@ import {
   blsCreateProof,
   blsVerifyProof,
 } from "@mattrglobal/bbs-signatures";
-import { exit } from 'process';
+import { exit } from "process";
 
 const main = async () => {
   //Generate a new key pair
@@ -33,14 +32,13 @@ const main = async () => {
   console.log("Key pair generated");
   //console.log(`Public key base64 = ${Buffer.from(keyPair.publicKey).toString("base64")}`);
 
-  //document sent by publisher
-  let jsonInputDocument = require('/home/vm/new-project/BBS-with-MQTT-and-TLS/sample/ts-node/inputDocument.json');
+  //document sent by publisher and will be received by server
+  let jsonInputDocument = require("../inputDocument.json");
 
   const temperature = jsonInputDocument.Data.Temperature;
   const suburb = jsonInputDocument.Data.Suburb;
-  const latitude = jsonInputDocument.Data.GPS_Lat
-  const longitude = jsonInputDocument.Data.GPS_Long
-
+  const latitude = jsonInputDocument.Data.GPS_Lat;
+  const longitude = jsonInputDocument.Data.GPS_Long;
 
   //Set of messages we wish to sign
   const messages = [
@@ -49,7 +47,6 @@ const main = async () => {
     Uint8Array.from(Buffer.from(latitude.toString(), "utf8")),
     Uint8Array.from(Buffer.from(longitude.toString(), "utf8")),
   ];
-
 
   //console.log("Signing a message set of " + messages);
 
@@ -62,8 +59,6 @@ const main = async () => {
 
   //console.log(`Output signature base64 = ${Buffer.from(signature).toString("base64")}`);
 
-
-
   //Verify the signature
   const isVerified = await blsVerify({
     publicKey: keyPair.publicKey,
@@ -71,8 +66,8 @@ const main = async () => {
     signature,
   });
 
-
-  //Derive a proof from the signature revealing the first message
+  //Derive a proof from the signature revealing temperature and suburb
+  //Note: this is a piece of software executed by server
   const proof = await blsCreateProof({
     signature,
     publicKey: keyPair.publicKey,
@@ -80,8 +75,6 @@ const main = async () => {
     nonce: Uint8Array.from(Buffer.from("nonce", "utf8")),
     revealed: [0, 1], //temperature and suburb position
   });
-
-
 
   /*Verify the created proof
   The proof is created containing the messages selected to be shared. In this implementation, messages are not shown inside the proof.
@@ -96,29 +89,23 @@ const main = async () => {
     nonce: Uint8Array.from(Buffer.from("nonce", "utf8")),
   });
 
-
-
   var client = mqtt.connect("mqtt://127.0.0.1:2020");
-  const { exec } = require('child_process');
+  const { exec } = require("child_process");
 
   if (isProofVerified_temp_suburb.verified == true) {
-
-    var temp_suburb = { "Temperature": temperature, "Suburb": suburb };
+    var temp_suburb = { Temperature: temperature, Suburb: suburb };
     var temp_with_suburb_string = JSON.stringify(temp_suburb);
 
-
-
-    fs.writeFile('temp_with_suburb.json', temp_with_suburb_string, err => {
+    fs.writeFile("temp_with_suburb.json", temp_with_suburb_string, (err) => {
       if (err) {
         console.error(err);
       }
-      const output = execSync('sudo mosquitto_pub -p 8883 -u publisher -P pub --cafile certs/ca/ca.crt --cert certs/client/client.crt --key certs/client/client.key -h localhost -f temp_with_suburb.json -t temp_with_suburb', { encoding: 'utf-8' });  // the default is 'buffer'
+      const output = execSync(
+        "sudo mosquitto_pub -p 8883 -u publisher -P pub --cafile certs/ca/ca.crt --cert certs/client/client.crt --key certs/client/client.key -h localhost -f temp_with_suburb.json -t temp_with_suburb",
+        { encoding: "utf-8" }
+      ); // the default is 'buffer'
     });
-
-
   }
-
-
 
   //Derive a proof from the signature revealing all the items
   const proof_all_items = await blsCreateProof({
@@ -131,7 +118,6 @@ const main = async () => {
 
   //console.log(`Output proof_B base64 = ${Buffer.from(proof_all_items).toString("base64")}`);
 
-
   const isProofVerified_temp_with_gps = await blsVerifyProof({
     proof: proof_all_items,
     publicKey: keyPair.publicKey,
@@ -139,28 +125,28 @@ const main = async () => {
     nonce: Uint8Array.from(Buffer.from("nonce", "utf8")),
   });
 
-
   if (isProofVerified_temp_with_gps.verified == true) {
-
-
-    var temp_with_gps = { "Temperature": temperature, "Lat_GPS": latitude, "Long_GPS": longitude, "Suburb": suburb };
+    var temp_with_gps = {
+      Temperature: temperature,
+      Lat_GPS: latitude,
+      Long_GPS: longitude,
+      Suburb: suburb,
+    };
     var temp_with_gps_json = JSON.stringify(temp_with_gps);
-    
-    fs.writeFile('temp_with_gps.json', temp_with_gps_json, err => {
+
+    fs.writeFile("temp_with_gps.json", temp_with_gps_json, (err) => {
       if (err) {
         console.error(err);
       }
-      const output = execSync('sudo mosquitto_pub -p 8883 -u publisher -P pub --cafile certs/ca/ca.crt --cert certs/client/client.crt --key certs/client/client.key -h localhost -f temp_with_gps.json -t temp_with_gps', { encoding: 'utf-8' });  // the default is 'buffer'
-
+      const output = execSync(
+        "sudo mosquitto_pub -p 8883 -u publisher -P pub --cafile certs/ca/ca.crt --cert certs/client/client.crt --key certs/client/client.key -h localhost -f temp_with_gps.json -t temp_with_gps",
+        { encoding: "utf-8" }
+      ); // the default is 'buffer'
     });
 
-  console.log("Published !")
-  //exit();
-}
-
-
-}
-
-
+    console.log("Published !");
+    //exit();
+  }
+};
 
 main();
