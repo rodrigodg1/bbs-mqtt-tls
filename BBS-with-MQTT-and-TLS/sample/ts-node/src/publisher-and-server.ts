@@ -50,8 +50,7 @@ const main = async () => {
 
   //console.log("Signing a message set of " + messages);
 
-  //Create the signature
-
+  //publisher creates the signature. The signature and the inputDocument will be send to the server.
   const signature = await blsSign({
     keyPair,
     messages: messages,
@@ -59,7 +58,7 @@ const main = async () => {
 
   //console.log(`Output signature base64 = ${Buffer.from(signature).toString("base64")}`);
 
-  //Verify the signature
+  //Server and subscribers can verify the signature.
   const isVerified = await blsVerify({
     publicKey: keyPair.publicKey,
     messages: messages,
@@ -68,7 +67,7 @@ const main = async () => {
 
   //Derive a proof from the signature revealing temperature and suburb
   //Note: this is a piece of software executed by server
-  const proof = await blsCreateProof({
+  const proof_temp_suburb = await blsCreateProof({
     signature,
     publicKey: keyPair.publicKey,
     messages,
@@ -83,7 +82,7 @@ const main = async () => {
   If the message is allowed, the check function returns true.
   */
   const isProofVerified_temp_suburb = await blsVerifyProof({
-    proof,
+    proof: proof_temp_suburb,
     publicKey: keyPair.publicKey,
     messages: messages.slice(0, 2), // temperature and suburb (note the message position here)
     nonce: Uint8Array.from(Buffer.from("nonce", "utf8")),
@@ -92,6 +91,7 @@ const main = async () => {
   var client = mqtt.connect("mqtt://127.0.0.1:2020");
   const { exec } = require("child_process");
 
+  //sends the data to the subscriber A
   if (isProofVerified_temp_suburb.verified == true) {
     var temp_suburb = { Temperature: temperature, Suburb: suburb };
     var temp_with_suburb_string = JSON.stringify(temp_suburb);
@@ -125,6 +125,7 @@ const main = async () => {
     nonce: Uint8Array.from(Buffer.from("nonce", "utf8")),
   });
 
+  //sends the data to the subscriber B
   if (isProofVerified_temp_with_gps.verified == true) {
     var temp_with_gps = {
       Temperature: temperature,

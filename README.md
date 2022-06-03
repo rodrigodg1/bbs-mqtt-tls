@@ -1,4 +1,3 @@
-
 # bbs-mqtt-tls
 
 BBS+ signatures enable a user to select information to be shared. In this way, multiple versions of a document will be published in the respective topics via the broker server.
@@ -9,16 +8,7 @@ BBS+ signatures enable a user to select information to be shared. In this way, m
 
 [BBS+ implementation with MQTT integration with TLS](https://github.com/rodrigodg1/bbs-mqtt-tls/tree/main/BBS-with-MQTT-and-TLS)
 
-
 #
-<br />
-
-
-
-**Implementation Diagram**
-<br />
-
-![Diagram BBS+ with MQTT](https://raw.githubusercontent.com/rodrigodg1/bbs-mqtt-tls/main/diagram.jpg)
 
 <br />
 
@@ -31,6 +21,5 @@ BBS+ signatures enable a user to select information to be shared. In this way, m
 
 **Packet analysis with TLS**
 <br />
-
 
 ![Packet analysis with TLS](https://raw.githubusercontent.com/rodrigodg1/bbs-mqtt-tls/main/encrypted.png)
