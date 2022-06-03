@@ -44,9 +44,12 @@ The following is a list of dependencies:
 - [Mosquitto](https://mosquitto.org/download/)
 - [MQTT](https://www.npmjs.com/package/mqtt)
 
-
 ## Example
 
 - [Example 1](https://github.com/rodrigodg1/bbs-mqtt-tls/tree/main/BBS-with-MQTT/sample/ts-node)
 
+or
 
+```
+cd sample/ts-node
+```

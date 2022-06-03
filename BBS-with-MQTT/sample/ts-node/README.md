@@ -1,4 +1,4 @@
-# bbs-signatures-sample
+# BBS signatures with MQTT without TLS
 
 The publisher sends a document (inputDocument) to the server with the following items:
 
@@ -12,7 +12,7 @@ The server creates a two diferent versions in topics:
 - Topic 1: temp_with_suburb
 - Topic 2: temp_with_gps
 
-Subscriber A onlye receiver Topic 1 with temperature and Suburb information.
+Subscriber A only receive Topic 1 with temperature and Suburb information.
 
 Subscriber B receive the Topic 2 with all informations (i.e., temperature, GPS_Lat, GPS_Long, and Suburb)
 

@@ -31,7 +31,7 @@ To start mosquitto server,
 cd /server
 ```
 
-change the path in `server-config.conf`
+First, update the paths in `server-config.conf`
 
 Run:
 

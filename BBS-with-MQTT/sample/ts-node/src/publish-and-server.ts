@@ -28,7 +28,7 @@ const main = async () => {
   try {
     const keyPair = await generateBls12381G2KeyPair();
 
-    console.log("Key pair generated");
+    //console.log("Key pair generated");
     //console.log(`Public key base64 = ${Buffer.from(keyPair.publicKey).toString("base64")}`);
 
     //document sent by publisher
