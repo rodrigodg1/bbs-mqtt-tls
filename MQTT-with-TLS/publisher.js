@@ -30,7 +30,7 @@ function publish() {
         });
         fs.appendFile('start_time_subA.txt', "\n", function (err) {
             if (err) throw err;
-            console.log('Saved!');
+            //console.log('Saved!');
         });
 
 
@@ -58,12 +58,8 @@ function publish() {
 
         fs.appendFile('start_time_subB.txt', "\n", function (err) {
             if (err) throw err;
-            console.log('Saved!');
+            //console.log('Saved!');
         });
-
-
-
-
 
 
 
